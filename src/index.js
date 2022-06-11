@@ -1,13 +1,15 @@
 import React from "react";
-import { render } from "react-dom";
-import "./style.css";
+import "./style.scss";
 
-const rootElement = document.getElementById("target");
+import { createRoot } from "react-dom/client";
+import { App } from "./app/App";
 
-const Greeting = (props) => {
-  return <h1>Hello sample chat your api key is {props.apiKey}</h1>;
-};
-render(
-  <Greeting apiKey={rootElement.getAttribute("data-chat-api-key")} />,
-  rootElement
-);
+const botContainer = document.getElementById("bot-target");
+
+if (botContainer) {
+  const botApiKey = botContainer?.getAttribute("bot-api-key");
+  if (!botApiKey) console.error("bot-api-key is not supplied");
+  else createRoot(botContainer).render(<App apiKey={botApiKey} />);
+} else {
+  console.error("bot-target is not supplied or not matching");
+}

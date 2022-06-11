@@ -7,6 +7,18 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    static: [
+      {
+        directory: path.join(__dirname, "example"),
+      },
+      {
+        directory: path.join(__dirname, "dist"),
+      },
+    ],
+    port: 4000,
+    liveReload: true,
+  },
   module: {
     rules: [
       {
@@ -20,8 +32,16 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+        test: /\.s[ac]ss$/i,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
+        ],
+      },
+      {
+        test: /\.(png|jpeg|jpg|svg)$/,
+        type: "asset/resource",
       },
     ],
   },

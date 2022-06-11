@@ -1,0 +1,8 @@
+@import "./variables.scss";
+
+// text-color
+@each $name, $color in $bot-text-color-map {
+    .text-#{$name} {
+        color: $color;
+    }
+}

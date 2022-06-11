@@ -1,0 +1,22 @@
+$font-family: "Nunito", sans-serif;
+$font-size: 14px;
+$font-weight: normal;
+
+$primary: #00796b;
+$secondary: #263238;
+$white: #ffffff;
+
+$botbtn-width: 52px;
+$botbtn-height: 52px;
+$botbtn-bottom-position: 16px;
+$botbtn-right-position: 16px;
+
+$bot-container-width: 377px;
+$bot-container-border-radius: 10px;
+
+$bot-padding: 16px;
+
+$bot-text-color-map: (
+    "primary": $primary,
+    "secondary": $secondary,
+);
