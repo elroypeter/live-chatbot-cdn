@@ -125,12 +125,18 @@ textarea {
         border-top-right-radius: $bot-container-border-radius;
         border-top-left-radius: $bot-container-border-radius;
 
-        .bot-agent-avatar {
+        span.bot-agent-avatar {
+            @include btn();
             margin-top: -32px;
             background-color: $primary;
             border: 4px solid rgb(255 255 255 / 10%);
             border-radius: 50%;
             width: 52px;
+
+            img {
+                width: 46px;
+                border-radius: 50%;
+            }
         }
 
         .sidebtn {
